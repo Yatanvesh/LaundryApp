@@ -1,0 +1,37 @@
+#title{
+    color:#ff165d;
+    /*background-color: #303841;*/
+    /*font-family: 'Lora', serif;*/
+    /*font-family: 'Anton', sans-serif;*/
+    padding: 5% 5% 7%;
+    /*font-family: 'Pacifico', 'cursive';*/
+    font-family: 'Righteous', sans-serif;
+}
+.container-fluid{
+    background: #252a34;
+
+}
+.filler-text{
+    font-family: 'BioRhyme', serif;
+
+}
+
+.title-text{
+    font-family: 'Pacifico', 'cursive';
+    font-size: 4rem;
+}
+.download-button{
+    margin:5% 3% 5% 0;
+}
+.title-image{
+    width: 80%;
+    height:120%;
+    border-radius: 1.5rem;
+}
+
+
+p{
+    /*font-size: 80px;*/
+    /*font-family: 'Pacifico', cursive;*/
+    display: inline-block;
+}
