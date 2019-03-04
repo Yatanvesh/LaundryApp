@@ -2,9 +2,15 @@
   "name": "react-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@types/react": "^16.8.5",
     "bootstrap": "^4.3.1",
+    "moment": "^2.24.0",
     "react": "^16.8.3",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.3",
@@ -12,10 +18,15 @@
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.1",
     "react-scripts": "2.1.5",
+    "react-select": "^2.4.1",
+    "react-time-range": "^1.0.4",
+    "react-time-range-slider": "^1.1.1",
+    "reactn": "^1.0.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
+    "starthot": "webpack-dev-server --hot",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

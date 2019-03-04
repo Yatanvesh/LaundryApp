@@ -1,0 +1,30 @@
+.list-group-dark-custom .list-group-item{
+    background-color: #384259;
+    border: 1px solid #eeeeee;
+    border-radius: 1rem !important;
+    font-family:Righteous, sans-serif ;
+    font-size: 1.3rem;
+    color:white;
+    transition: ease-in 0.2s ;
+}
+
+.list-group-dark-custom .list-group-item:hover {
+    background-color: #2C3447;
+}
+
+
+.user-properties{
+    text-transform: uppercase;
+    margin-left: 1rem;
+    font-size:1.5rem;
+    color:#eaeaea;
+}
+
+.edit-icon{
+    transition: ease-in 0.2s ;
+}
+.edit-icon:hover{
+    transform: scale(1.2);
+    color:#3ec1d3;
+    cursor: pointer;
+}

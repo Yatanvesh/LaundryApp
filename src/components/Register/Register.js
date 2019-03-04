@@ -1,5 +1,5 @@
 import React from 'react';
-import './Regsiter.css';
+import './Register.css';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -65,23 +65,20 @@ class Register extends React.Component{
                                 </div>
 
                                 <div className="form-label-group">
-                                    <input type="textarea" id="inputName" className="form-control"
-                                           placeholder="Name" required autoFocus
-                                           value={this.state.name}
-                                           onChange={ (event) => {this.setState({name: event.target.value}) }}
+                                    <textarea  id="inputAddress" className="form-control" required
+                                               placeholder='Address'
+                                           value={this.state.address}
+                                               style={{width:'100%', height:'150px','borderRadius':'2rem'}}
+                                           onChange={ (event) => {this.setState({address: event.target.value}) }}
                                     />
-                                    <label htmlFor="inputName">Name</label>
+                                    <label htmlFor="inputAddress"></label>
                                 </div>
-
-
-
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase">Sign
-                                    in
+                                <button className="btn btn-lg btn-primary btn-block text-uppercase"
+                                        onClick={()=> {this.props.onRegister(this.state)}}>Register
                                 </button>
                                 <hr className="my-4"/>
                                 <button className="btn btn-lg btn-google btn-block "
-                                        style={{color:'white', backgroundColor:"#ea4335"}}
-                                >
+                                        style={{color:'white', backgroundColor:"#ea4335"}}>
                                     <FontAwesomeIcon icon={faGoogle} className='mr-2'/> Sign in with Google
                                 </button>
                                 <button className="btn btn-lg btn-block"

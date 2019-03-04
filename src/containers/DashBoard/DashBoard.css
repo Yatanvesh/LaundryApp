@@ -1,0 +1,22 @@
+#dashboard{
+    color:#ff165d;
+    font-family:Righteous, sans-serif;
+}
+
+.greeting{
+    font-family:Pacifico, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+.dash-title-text{
+    font-family: Anton ,sans-serif;
+    color: #3490de;
+}
+
+.orders-col{
+    border:1px solid #2f89fc;
+    border-radius: 2rem;
+    background: #283148;
+}

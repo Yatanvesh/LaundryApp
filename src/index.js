@@ -7,8 +7,7 @@ import WebFont from 'webfontloader';
 
 WebFont.load({
     google: {
-        families: ['Pacifico', 'cursive','Lora','Anton','ZCOOL QingKe HuangYou','Righteous', 'IBM Plex Sans','BioRhyme'],
-
+        families: ['Pacifico','Oswald','Quicksand','Judson','Playfair Display','Chivo','Lora','Courgette','Anton','ZCOOL QingKe HuangYou','Righteous', 'IBM Plex Sans','BioRhyme'],
     }
 });
 

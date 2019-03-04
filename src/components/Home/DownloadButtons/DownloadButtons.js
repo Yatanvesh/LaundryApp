@@ -1,13 +1,15 @@
 import React from 'react';
-import Row from "../Home/Home";
+import Row from "../Home";
+import Col from 'react-bootstrap/Col';
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faApple, faGooglePlay} from "@fortawesome/free-brands-svg-icons";
+import Container from "react-bootstrap/Container";
 
-import Col from 'react-bootstrap/Col';
+
 const DownloadButtons = () =>  {
     return (
-        <div>
+        <Container>
             <Row>
                 <Col className='text-center mt-4'>
                     <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
@@ -27,7 +29,7 @@ const DownloadButtons = () =>  {
                     </button>
                 </Col>
             </Row>
-        </div>
+        </Container>
     );
 };
 

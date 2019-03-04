@@ -1,0 +1,17 @@
+#greeting{
+    font-size: 5rem;
+    color:white;
+    font-family: Righteous, sans-serif;
+}
+
+.section-title{
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    color:#ff165d;
+}
+
+
+.time-range{
+    color:white!important;
+    background-color: white !important;
+}

@@ -1,0 +1,36 @@
+.order-card{
+    background: #364e68;
+    /*border:px solid black;*/
+    transition: ease-in 0.3s;
+}
+
+.order-card:hover{
+    background: #264e70;
+}
+
+.id{
+    text-align: center;
+    color:#fefdca;
+    font-size: 1.5rem;
+}
+.field-name{
+    font-size: 1.2rem;
+    white-space:nowrap;
+
+}
+
+.field-value{
+    font-size: 1.2rem;
+    white-space:nowrap;
+    color:#3ec1d3;
+
+}
+.field-separator{
+    border: none;
+    height: 2px;
+    padding:0;
+    margin-top:0.3rem;
+    margin-bottom:0.3rem;
+    color: #333; /* old IE */
+    background-color: black;
+}

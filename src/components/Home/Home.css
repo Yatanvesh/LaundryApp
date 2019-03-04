@@ -1,37 +1,199 @@
 #title{
     color:#ff165d;
-    /*background-color: #303841;*/
-    /*font-family: 'Lora', serif;*/
-    /*font-family: 'Anton', sans-serif;*/
-    padding: 5% 5% 7%;
-    /*font-family: 'Pacifico', 'cursive';*/
+    margin-top: 1.5rem;
+    margin-bottom: 1.3rem;
     font-family: 'Righteous', sans-serif;
 }
-.container-fluid{
-    background: #252a34;
-
+.main-title{
+    font-family: Anton, sans-serif;
 }
 .filler-text{
-    font-family: 'BioRhyme', serif;
-
+    font-family: 'Chivo', serif;
 }
-
 .title-text{
     font-family: 'Pacifico', 'cursive';
     font-size: 4rem;
 }
-.download-button{
-    margin:5% 3% 5% 0;
+.app-download-button{
+    margin-top:1rem;
 }
 .title-image{
-    width: 80%;
-    height:120%;
+    width: 90%;
     border-radius: 1.5rem;
 }
-
-
-p{
-    /*font-size: 80px;*/
-    /*font-family: 'Pacifico', cursive;*/
-    display: inline-block;
+.description-text{
+    font-family: 'Oswald', sans-serif;
+    color: #3490de;
 }
+.btn-text {
+    font-size: 1.5rem;
+}
+
+/*Why US*/
+#why-us{
+    background: #defcfc;
+}
+
+.section-title{
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    color:#ff165d;
+}
+
+.feature-icons{
+    font-size: 3rem;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    color:#384259;
+}
+
+.feature-icons:hover{
+    color:#f73859;
+    transform: scale(1.4);
+}
+.feature-text{
+    font-family: 'Anton', sans-serif;
+    color:#384259;
+    font-size: 2rem;
+}
+.feature-desc{
+    font-family: 'Chivo', sans-serif;
+    font-size: 1.2rem;
+    color:#384259;
+}
+
+/*pricing*/
+#pricing{
+    color:#eeeeee;
+    /*margin-top: -40px;*/
+    /*padding-top: 40px;*/
+}
+
+
+.section-title-light{
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    display: inline-block;
+    border-radius: 5px;
+    background: #defcfc;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ff165d;
+    cursor: pointer;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.weightText{
+    font-size: 1.6rem;
+    font-family: 'Oswald', serif;
+}
+.resultText{
+    font-size: 2.5rem;
+    font-family: 'Oswald', serif;
+    color:#f73859;
+
+}
+.detail-pricing-link{
+    cursor:pointer;
+    color:#ff2e63;
+    font-style: italic;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+.detail-pricing-link:hover{
+   transform: scale(1.1);
+
+}
+
+/*opinion*/
+#opinion{
+    background: #defcfc;
+}
+.testimonial-text{
+    font-family:'Courgette', cursive;
+    max-height: 300px
+;
+}
+.testimonial-image{
+    width:30%;
+    border-radius: 100%;
+    margin:20px;
+    max-height: 200px;
+}
+.testimonial-name{
+    font-size: 1.3rem;
+}
+
+/*about*/
+#about{
+    background: #ff2e63;
+    color:#eeeeee ;
+    padding-bottom:1rem;
+}
+
+.about-text{
+    font-family: 'Anton', sans-serif;
+    color:#252a34;
+    font-size: 2rem;
+}
+.quote-text{
+    /*font-family:Lora;*/
+
+    font-size: 1.5rem;
+
+}
+
+.link-container{
+    position: relative;
+}
+
+.jumptarget {
+    display:block;
+    position: absolute;
+    visibility: hidden;
+    top:-90px;
+    left:0px;
+}
+/*contact*/
+#contact{
+    background: #defcfc;
+
+    /*3490de*/
+}
+
+.contact-form-title{
+    text-align: center;
+    color: #0062cc;
+}
+.form-rounded {
+    border-radius: 50px;
+}
+.contact-icon{
+    font-size: 2rem;
+}
+
+

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const About = () =>  {
+    const [count, setCount] = useState(0);
     return (
         <div>
-            About Contents Here
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
         </div>
     );
 };
 
 export default About;
+
