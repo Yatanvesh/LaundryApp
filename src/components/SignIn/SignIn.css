@@ -7,10 +7,7 @@
     border: 0;
     border-radius: 3rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-
 }
-
-
 
 .card-signin .card-title {
     margin-bottom: 2rem;
@@ -21,7 +18,7 @@
 
 .card-signin .card-body {
     padding: 2rem;
-    background: #303841;
+    background: var(--blue-grey);
     color:white;
 }
 .btn {
@@ -57,7 +54,7 @@
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
-    color: #495057;
+    color: var(--blue-grey);
     border: 1px solid transparent;
     border-radius: .25rem;
     transition: all .1s ease-in-out;
@@ -92,5 +89,5 @@
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 12px;
-    color: #777;
+    color: var(--blue-grey);
 }

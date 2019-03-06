@@ -12,39 +12,60 @@ import DashBoard from './containers/DashBoard/DashBoard';
 import './App.css';
 
 const dummyUser={
-    name:"roh",
-    email:'roh',
-    password:'123',
+    name:"Abhinav",
+    type:'customer',
+    email:'q',
+    password:'q',
     phone:'1234567890',
     address:'Hno 9 Dum street ',
+    gis:null
+};
 
+const dummyRetailer={
+    name:"Ajit",
+    type:'retail',
+    email:'w',
+    password:'w',
+    phone:'1234567890',
+    address:'Hno 9 dum dum st',
+    gis:'',
 };
 
 const initialUserState={
     name:'',
-    orders:{},
+    type:'',
+    orders:[],
     phone:'',
     address:'',
     email:'',
+    gis:null,
 }
 
 setGlobal({
     signedIn:false,
     user:{
         name:'',
+        type:'',
         orders:[],
         phone:'',
         address:'',
         email:'',
+        gis:'',
     },
     guest:{
         name:'',
+        type:'',
         orders:[],
         phone:'',
         address:'',
         email:'',
+        gis:'',
     },
     history:null,
+    titleBg:'#303841',
+    blueGrey:'#303841',
+    fadedBlue:'#384259',
+    lightGrey:'#233142',
 });
 
 class App extends Component {
@@ -53,19 +74,36 @@ class App extends Component {
         if( data.email.toLowerCase() === dummyUser.email.toLowerCase() && data.password === dummyUser.password ){
             this.setGlobal(Object.assign(this.global.user, {
                 name: dummyUser.name,
+                type:dummyUser.type,
                 phone:dummyUser.phone,
                 address:dummyUser.address,
                 email:dummyUser.email
             }));
             this.setGlobal({signedIn:true});
+            this.setGlobal({titleBg:this.global.fadedBlue});
+            history.push("/dashboard");
+            this.setGlobal({history:history});
+        } else if( data.email.toLowerCase() === dummyRetailer.email.toLowerCase() && data.password === dummyRetailer.password ) {
+            this.setGlobal(Object.assign(this.global.user, {
+                name: dummyRetailer.name,
+                type:dummyRetailer.type,
+                phone:dummyRetailer.phone,
+                address:dummyRetailer.address,
+                email:dummyRetailer.email
+            }));
+            this.setGlobal({signedIn:true});
+            this.setGlobal({titleBg:this.global.lightGrey});
             history.push("/dashboard");
             this.setGlobal({history:history});
         }
+
+
         else return false;
     };
 
     signOut = ()=>{
         this.setGlobal({signedIn:false});
+        this.setGlobal({titleBg:this.global.blueGrey});
         this.global.history.push('./signin');
         this.setGlobal(Object.assign(this.global.user, initialUserState));
     }

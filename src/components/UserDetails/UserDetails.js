@@ -4,8 +4,8 @@ import {faEdit} from "@fortawesome/free-solid-svg-icons";
 import './UserDetails.css';
 
 const UserDetails = () =>  {
-    const [user,setUser] = useGlobal('user');
-    const [guest,setGuest] = useGlobal('guest');
+    const [user] = useGlobal('user');
+    const [guest] = useGlobal('guest');
     // const [signedIn, setSignedIn] =useGlobal('signedIn');
 
     return (

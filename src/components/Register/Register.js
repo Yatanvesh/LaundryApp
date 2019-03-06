@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGoogle, faFacebook} from '@fortawesome/free-brands-svg-icons';
-import {Link} from 'react-router-dom';
 
 class Register extends React.Component{
     constructor(props){
@@ -73,11 +72,11 @@ class Register extends React.Component{
                                     />
                                     <label htmlFor="inputAddress"></label>
                                 </div>
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase"
+                                <button className="btn btn-lg btn-primary btn-block btn-register "
                                         onClick={()=> {this.props.onRegister(this.state)}}>Register
                                 </button>
                                 <hr className="my-4"/>
-                                <button className="btn btn-lg btn-google btn-block "
+                                <button className="btn btn-lg  btn-block "
                                         style={{color:'white', backgroundColor:"#ea4335"}}>
                                     <FontAwesomeIcon icon={faGoogle} className='mr-2'/> Sign in with Google
                                 </button>
@@ -86,12 +85,6 @@ class Register extends React.Component{
                                 >
                                     <FontAwesomeIcon icon={faFacebook} className='mr-2'/> Sign in with Facebook
                                 </button>
-
-                                <div className='my-3 '>
-                                    <Link className='btn btn-info btn-lg btn-block text-uppercase' to='/register'>
-                                        Register
-                                    </Link>
-                                </div>
                             </Card.Body>
                         </Card>
                     </Col>

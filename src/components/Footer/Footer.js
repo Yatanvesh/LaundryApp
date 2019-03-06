@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useGlobal} from  'reactn';
 import './Footer.css';
 import {faTwitter, faFacebook} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {HashLink} from 'react-router-hash-link';
+
 const Footer = () =>  {
+    let [bgColor] = useGlobal('titleBg');
         return (
     <footer id="myFooter">
         <div className="container">
@@ -44,7 +46,7 @@ const Footer = () =>  {
                 </div>
             </div>
         </div>
-        <div className="footer-copyright">
+        <div className='footer-copyright' style={{'backgroundColor':bgColor}}>
             <p>© 2019 Copyright All rights reserved </p>
         </div>
     </footer>

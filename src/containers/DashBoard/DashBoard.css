@@ -1,5 +1,5 @@
 #dashboard{
-    color:#ff165d;
+    color: var(--bright-blue);
     font-family:Righteous, sans-serif;
 }
 
@@ -12,7 +12,7 @@
 
 .dash-title-text{
     font-family: Anton ,sans-serif;
-    color: #3490de;
+    color: var(--bright-blue);
 }
 
 .orders-col{

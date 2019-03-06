@@ -1,31 +1,28 @@
-import React, {useGlobal} from 'reactn';
+import React from 'reactn';
 import {Link} from 'react-router-dom';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {HashLink} from 'react-router-hash-link';
 import './NavBar.css';
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 
 class NavBar extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            backgroundColor:'#303841',
-            backgroundColorDarker:'#384259',
-        }
-    }
+
     render() {
         return (
 
             <Navbar variant='dark' expand="md" sticky="top" className="text-center navbar-root"
-                    style={{'backgroundColor': !this.global.signedIn ? this.state.backgroundColor : this.state.backgroundColorDarker}}>
+                    style={{'backgroundColor':this.global.titleBg}} >
                 <Navbar.Brand className="Laundry-Brand ml-3"><Link to={'/'}>Mr Laundry</Link> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-5">
                         <HashLink to={'/#titleLink'} className="nav-link">Home</HashLink>
-                        <HashLink to={'/#pricingLink'} className="nav-link">Pricing</HashLink>
+                        {
+                            this.global.user.type!=='retail' &&
+                            <HashLink to={'/#pricingLink'} className="nav-link">Pricing</HashLink>
+                        }
+
                         {!this.global.signedIn &&
                         <Link to={'/signin'} className="nav-link ">Sign In</Link>
                         }
@@ -35,7 +32,7 @@ class NavBar extends React.Component {
                         }
                         {
                             this.global.signedIn &&
-                            <Link to={'/dashboard'} className="nav-link">Orders</Link>
+                            <Link to={'/dashboard'} className="nav-link">Bookings</Link>
                         }
                         {
                             this.global.signedIn &&
@@ -52,26 +49,24 @@ class NavBar extends React.Component {
 
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Link to={'/dashboard'} className="text-dark btn">Orders</Link>
+                                    <Link to={'/dashboard'} className="text-dark btn">Bookings</Link>
                                     <div className="text-dark btn" onClick={() => {this.props.signOut()}} >Sign Out</div>
 
                                 </Dropdown.Menu>
                             </Dropdown>
                         }
 
+                        {
+                            this.global.user.type!=='retail' &&
+                            <form className="form-inline  mx-auto">
+                                <Link to={'/book'} className="nav-link btn btn-danger btn-sm text-light ml-2 px-3  "> <span
+                                    className="btn-text"> Book</span></Link>
+                            </form>
+                        }
 
-
-
-                        <form className="form-inline  mx-auto">
-
-                            <Link to={'/book'} className="nav-link btn btn-danger btn-sm text-light ml-2 px-3  "> <span
-                                className="btn-text"> Book</span></Link>
-                        </form>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-
-
         );
     }
 

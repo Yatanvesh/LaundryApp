@@ -1,12 +1,11 @@
 .error-container{
-    color:#f73859;
+    color:var(--bright-red);
     font-family: Anton, sans-serif;
     font-size: 5rem;
-
     min-height: 60%;
     min-height: 60vh;
 }
 .error-icon{
     font-size: 4rem;
-    color:#f73859;
+    color:var(--bright-red);
 }

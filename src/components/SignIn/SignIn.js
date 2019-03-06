@@ -66,8 +66,8 @@ class SignIn extends React.Component{
                                     <label className="custom-control-label" htmlFor="customCheck1">Remember
                                         Me</label>
                                 </div>
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase" onClick={() =>  this.handleSignIn() }>Sign
-                                    in
+                                <button className="btn btn-lg btn-primary btn-block" onClick={() =>  this.handleSignIn() }>Sign
+                                    In
                                 </button>
 
                                <Alert dismissible show={this.state.failed} variant='danger' className='mt-4' onClose={ () => {this.setState({failed:false} )} } >
@@ -75,7 +75,7 @@ class SignIn extends React.Component{
                                </Alert>
 
                                 <hr className="my-4"/>
-                                <button className="btn btn-lg btn-google btn-block "
+                                <button className="btn btn-lg btn-block "
                                         style={{color:'white', backgroundColor:"#ea4335"}}
                                 >
                                     <FontAwesomeIcon icon={faGoogle} className='mr-2'/> Sign in with Google
@@ -87,7 +87,7 @@ class SignIn extends React.Component{
                                 </button>
 
                                 <div className='my-3 '>
-                                    <Link className='btn btn-info btn-lg btn-block text-uppercase' to='/register'>
+                                    <Link className='btn btn-info btn-lg btn-block' to='/register'>
                                          Register
                                     </Link>
                                 </div>

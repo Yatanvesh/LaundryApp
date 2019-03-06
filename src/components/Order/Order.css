@@ -1,6 +1,5 @@
 .order-card{
-    background: #364e68;
-    /*border:px solid black;*/
+    background: var(--faded-blue);
     transition: ease-in 0.3s;
 }
 
@@ -10,20 +9,18 @@
 
 .id{
     text-align: center;
-    color:#fefdca;
+    color:var(--light-blue);
     font-size: 1.5rem;
 }
 .field-name{
     font-size: 1.2rem;
     white-space:nowrap;
-
 }
 
 .field-value{
     font-size: 1.2rem;
     white-space:nowrap;
     color:#3ec1d3;
-
 }
 .field-separator{
     border: none;

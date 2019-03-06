@@ -98,10 +98,8 @@ class Book extends React.Component {
                 this.setGlobal(Object.assign(this.global.guest, {orders:newOrders}));
             }
         }
-
         if(true)//insertion success
             this.props.history.push('./dashboard');
-
     };
 
     render() {

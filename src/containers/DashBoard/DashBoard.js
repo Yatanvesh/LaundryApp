@@ -17,11 +17,6 @@ class DashBoard extends React.Component {
         else orders = this.global.guest.orders;
 
         this.state = {
-            col: {
-                xs: 12,
-                sm: 10,
-                md: 8
-            },
             orders:orders,
         }
         // if(!this.global.user.name)
@@ -46,38 +41,42 @@ class DashBoard extends React.Component {
     };
 
     render() {
-        let {xs, sm, md} = this.state.col;
+
         return (
             <section id='dashboard'>
                 <Container className='mt-4 mb-5'>
                     {this.getGreeting()}
-                    <Row className='mt-5 mx-2 mx-lg-0 '>
+                    <Row className='mt-4 mx-2 mx-lg-0 '>
                         <Col lg='7'>
-                            <Col md='12' className='orders-col py-3 '>
-                                <h2 className='my-2 text-center dash-title-text'>Your Orders</h2>
+                            <Col md='12' className='orders-col py-3 mt-3 '>
+                                <h2 className='my-2 text-center dash-title-text'>Your Bookings</h2>
                                 <Row>
                                     {
                                         this.state.orders.map(
                                             (order) =>{
                                                 return (
                                                     <Col xs='12' md='6' key={order.id}>
-                                                        <Order order={order} />
+                                                        <Order order={order} type={this.global.user.type} />
                                                     </Col>
                                                 )
                                             }
                                         )
                                     }
                                 </Row>
-                                <Row className='justify-content-center mt-3'>
-                                    <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
-                                        className="btn-text">Book Now</span></Link>
-                                </Row>
+                                {
+                                    this.global.user.type!=='retail' &&
+                                    <Row className='justify-content-center mt-3'>
+                                        <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
+                                            className="btn-text">Book Now</span></Link>
+                                    </Row>
+                                }
+
                             </Col>
                         </Col>
                         {
                             (this.global.user.name || this.global.guest.name ) &&
-                            <Col lg='5' className='py-3 '>
-                            <Col md='12' className='orders-col'>
+                            <Col lg='5' >
+                            <Col md='12' className='orders-col py-3 mt-3'>
                             <h2 className='my-2 text-center dash-title-text'>Your Details</h2>
                             <UserDetails/>
                             </Col>

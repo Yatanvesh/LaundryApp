@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Home.css';
 import titleImg from './images/funy2.jpeg';
 import user1 from './images/face1.jpeg';
@@ -46,38 +46,37 @@ class  Home extends React.Component{
                 <Container className='px-4'>
                     <Row>
                         <Col lg='6'>
-                            <h1 className='main-title'>Stuck in an endless cycle of cleansing? We can help </h1>
+                            <h1 className='main-title mt-4'>Stuck in an endless cycle of cleansing? We can help </h1>
                             <h2 className="filler-text">Introducing</h2>
-                            <h1 className='text-primary title-text py-4 text-center'>Mr Laundry</h1>
+                            <h1 className='text-primary title-text py-2 text-center'>Mr Laundry</h1>
                             <br/>
                             <h3 className='filler-text'>The solution to <em>some</em> of your problems in life</h3>
-                            <h3 className='description-text my-3'>We collect, wash and deliver your laundry</h3>
-                            <h2 className='description-text my-4'><em> So you can focus on the things that matter.</em></h2>
-                            <h3 className='description-text my-2 mb-4'> lorem ipsum dolor color lorem ipsum dolor lorem ipsum dolor color lorem ipsum dolorlorem ipsum dolor color lorem ipsum dolor</h3>
+                            <h3 className='description-text mt-2'>We collect, wash and deliver your laundry</h3>
+                            <h2 className='description-text'><em> So you can focus on the things that matter.</em></h2>
+                            <div className='my-4'>
+                                <div className='text-center mt-2'>
+                                    <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
+                                        className="btn-text">Book Now</span></Link>
+                                </div>
+                                <div className='text-center'>
+                                    <button className="btn btn-dark btn-lg app-download-button mx-2" type="button">
+                                        <FontAwesomeIcon icon={faApple}/>
+                                        <span className='pl-1'>Download</span>
+                                    </button>
+
+                                    <button className="btn btn-outline-light btn-lg app-download-button mx-2" type="button">
+                                        <FontAwesomeIcon icon={faGooglePlay}/>
+                                        <span className='pl-1'>Download</span>
+                                    </button>
+                                </div>
+                            </div>
+
                         </Col>
-                        <Col lg='6' className="pl-3">
+                        <Col lg='6' className="pl-3 pt-3">
                             <img className="title-image ml-4 mb-3" src={titleImg} alt="title-image-mock"/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className='text-center mt-4'>
-                            <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
-                                className="btn-text">Book Now</span></Link>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className='text-center'>
-                            <button className="btn btn-dark btn-lg app-download-button mx-2" type="button">
-                                <FontAwesomeIcon icon={faApple}/>
-                                <span className='pl-1'>Download</span>
-                            </button>
 
-                            <button className="btn btn-outline-light btn-lg app-download-button mx-2" type="button">
-                                <FontAwesomeIcon icon={faGooglePlay}/>
-                                <span className='pl-1'>Download</span>
-                            </button>
-                        </Col>
-                    </Row>
                 </Container>
             </section>
 
@@ -146,14 +145,12 @@ class  Home extends React.Component{
                             <h2 className='detail-pricing-link'>Detailed Pricing here </h2>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className='text-center mt-4'>
+                    <div className='my-4'>
+                        <div className='text-center mt-2'>
                             <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
                                 className="btn-text">Book Now</span></Link>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className='text-center'>
+                        </div>
+                        <div className='text-center'>
                             <button className="btn btn-dark btn-lg app-download-button mx-2" type="button">
                                 <FontAwesomeIcon icon={faApple}/>
                                 <span className='pl-1'>Download</span>
@@ -163,8 +160,9 @@ class  Home extends React.Component{
                                 <FontAwesomeIcon icon={faGooglePlay}/>
                                 <span className='pl-1'>Download</span>
                             </button>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
+
                 </Container>
             </section>
 

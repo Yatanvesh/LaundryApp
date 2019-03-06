@@ -1,5 +1,5 @@
 .list-group-dark-custom .list-group-item{
-    background-color: #384259;
+    background-color: var(--faded-blue);
     border: 1px solid #eeeeee;
     border-radius: 1rem !important;
     font-family:Righteous, sans-serif ;
@@ -17,7 +17,6 @@
     text-transform: uppercase;
     margin-left: 1rem;
     font-size:1.5rem;
-    color:#eaeaea;
 }
 
 .edit-icon{
@@ -25,6 +24,6 @@
 }
 .edit-icon:hover{
     transform: scale(1.2);
-    color:#3ec1d3;
+    color:var(--bright-blue);
     cursor: pointer;
 }

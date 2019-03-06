@@ -1,21 +1,13 @@
 .Navbar{
     top:100px;
-    /*font-family: 'Lora', serif;*/
-    /*font-family: 'Pacifico', cursive;*/
     font-family: 'Anton', sans-serif;
 }
 .Laundry-Brand{
     font-family: 'Pacifico', cursive;
-    /*font-min-size: 420px;*/
 }
 
 .nav-link{
-    /*font-family: 'Lora', serif;*/
-    /*font-family: 'ZCOOL QingKe HuangYou', cursive;*/
     font-family: 'Righteous', cursive;
-}
-.btn-text {
-    /*font-size: 1.1rem;*/
 }
 
 .navbar-root {
