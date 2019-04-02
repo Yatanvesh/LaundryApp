@@ -1,9 +1,10 @@
 import React from 'react';
-import './Order.css';
+import './OrderCard.css';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Status from './Status/Status';
 
 const OrderCard = ({order, type}) => {
     return (
@@ -58,6 +59,18 @@ const OrderCard = ({order, type}) => {
                             </Row> </span> :
                             null
                     }
+
+                    <hr className='field-separator'/>
+                    <Row>
+                        <Col>
+                            <div className='field-name'>Status:</div>
+                        </Col>
+                        <Col>
+                            <div className='field-value'>{'Being Washed'}</div>
+                        </Col>
+                    </Row>
+                    <Status/>
+
                     <Row className='justify-content-center my-2'>
                         <Col>
                             {
@@ -66,7 +79,6 @@ const OrderCard = ({order, type}) => {
                             }
                             <button className="btn btn-danger ml-2">Cancel</button>
                         </Col>
-
                     </Row>
                 </Container>
             </Card.Body>

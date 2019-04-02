@@ -9,7 +9,7 @@ const UserDetails = () =>  {
     // const [signedIn, setSignedIn] =useGlobal('signedIn');
 
     return (
-        <ul className="list-group list-group-dark-custom">
+        <ul className="UserDetails list-group list-group-dark-custom">
             <li className="list-group-item my-1 ">
                 Name:
                 <span className='user-properties '> {user.name||guest.name} </span>
@@ -19,7 +19,6 @@ const UserDetails = () =>  {
             <li className="list-group-item my-1">
                 Email:
                 <span className='user-properties'> {user.email ||guest.email} </span>
-
             </li>
 
             <li className="list-group-item my-1">

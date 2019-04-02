@@ -1,32 +1,35 @@
-.Navbar{
-    top:100px;
-    font-family: 'Anton', sans-serif;
-}
-.Laundry-Brand{
-    font-family: 'Pacifico', cursive;
-}
-
-.nav-link{
-    font-family: 'Righteous', cursive;
-}
-
-.navbar-root {
+.NavBarRoot {
     font-size: 1rem;
+}
+.NavBarRoot .logo-img{
+    max-width: 50% !important;
 }
 
 @media only screen and (min-width: 100px) {
-    .navbar-root {
+    .NavBarRoot {
         font-size: 1.4rem;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .navbar-root {
+    .NavBarRoot {
         font-size: 1.3rem;
     }
 }
 
-.signout{
+.NavBarRoot .Navbar{
+    top:100px;
+    font-family: 'Anton', sans-serif;
+}
+.NavBarRoot .Laundry-Brand{
+    font-family: 'Pacifico', cursive;
+}
+
+.NavBarRoot .nav-link{
+    font-family: 'Righteous', cursive;
+}
+
+.NavBarRoot .signout{
     cursor: pointer;
 }
 

@@ -7,11 +7,10 @@ import user3 from './images/face3.jpg';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faApple, faGooglePlay} from '@fortawesome/free-brands-svg-icons';
 import { faShippingFast, faWallet, faTshirt, faMapMarker,faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import Carousel from "react-bootstrap/Carousel";
+import DownloadButtons from './DownloadButtons/DownloadButtons';
 
 class  Home extends React.Component{
     constructor(props) {
@@ -19,7 +18,7 @@ class  Home extends React.Component{
 
         this.state = {
             weightValue: 1,
-            priceValue:20,
+            priceValue:60,
             contact:{
                 name:'',
                 email:'',
@@ -30,15 +29,12 @@ class  Home extends React.Component{
     }
 
     handlePriceChange(event) {
-        this.setState({weightValue: event.target.value, priceValue:event.target.value*20});
-
-        document.querySelector('#weight').textContent= `${this.state.weightValue} Kg`;
-        document.querySelector('#price').textContent= `${this.state.priceValue} ₹`;
+        this.setState({weightValue: event.target.value, priceValue:event.target.value*60});
     }
 
     render(){
     return (
-        <div>
+        <div className='Home'>
             <section id="title" >
                 <div className='link-container'>
                     <span id='titleLink' className='jumptarget'></span>
@@ -48,35 +44,17 @@ class  Home extends React.Component{
                         <Col lg='6'>
                             <h1 className='main-title mt-4'>Stuck in an endless cycle of cleansing? We can help </h1>
                             <h2 className="filler-text">Introducing</h2>
-                            <h1 className='text-primary title-text py-2 text-center'>Mr Laundry</h1>
+                            <h1 className='text-primary title-text py-2 text-center'>Wash my clothes</h1>
                             <br/>
                             <h3 className='filler-text'>The solution to <em>some</em> of your problems in life</h3>
                             <h3 className='description-text mt-2'>We collect, wash and deliver your laundry</h3>
                             <h2 className='description-text'><em> So you can focus on the things that matter.</em></h2>
-                            <div className='my-4'>
-                                <div className='text-center mt-2'>
-                                    <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
-                                        className="btn-text">Book Now</span></Link>
-                                </div>
-                                <div className='text-center'>
-                                    <button className="btn btn-dark btn-lg app-download-button mx-2" type="button">
-                                        <FontAwesomeIcon icon={faApple}/>
-                                        <span className='pl-1'>Download</span>
-                                    </button>
-
-                                    <button className="btn btn-outline-light btn-lg app-download-button mx-2" type="button">
-                                        <FontAwesomeIcon icon={faGooglePlay}/>
-                                        <span className='pl-1'>Download</span>
-                                    </button>
-                                </div>
-                            </div>
-
+                            <DownloadButtons/>
                         </Col>
                         <Col lg='6' className="pl-3 pt-3">
                             <img className="title-image ml-4 mb-3" src={titleImg} alt="title-image-mock"/>
                         </Col>
                     </Row>
-
                 </Container>
             </section>
 
@@ -114,7 +92,6 @@ class  Home extends React.Component{
                 <div className='link-container'>
                     <span id='pricingLink' className='jumptarget'></span>
                 </div>
-
                 <Container >
                     <Row>
                         <Col >
@@ -124,7 +101,7 @@ class  Home extends React.Component{
                     <Row>
                         <Col className='col-centered text-center mb-3 weightText'>
                             <span>Weight:</span>
-                            <span className='ml-2' id='weight'>1 Kg</span>
+                            <span className='ml-2' id='weight'>{this.state.weightValue} Kg</span>
                         </Col>
                     </Row>
                     <Row >
@@ -137,7 +114,7 @@ class  Home extends React.Component{
                     <Row>
                         <Col className='col-centered text-center mt-1 resultText'>
                             <span>Price:</span>
-                            <span className='ml-2' id='price'>20 ₹</span>
+                            <span className='ml-2' id='price'>{this.state.priceValue} ₹</span>
                         </Col>
                     </Row>
                     <Row>
@@ -145,24 +122,7 @@ class  Home extends React.Component{
                             <h2 className='detail-pricing-link'>Detailed Pricing here </h2>
                         </Col>
                     </Row>
-                    <div className='my-4'>
-                        <div className='text-center mt-2'>
-                            <Link to={'/book'} className="btn btn-danger btn-xl text-light px-3 "> <span
-                                className="btn-text">Book Now</span></Link>
-                        </div>
-                        <div className='text-center'>
-                            <button className="btn btn-dark btn-lg app-download-button mx-2" type="button">
-                                <FontAwesomeIcon icon={faApple}/>
-                                <span className='pl-1'>Download</span>
-                            </button>
-
-                            <button className="btn btn-outline-light btn-lg app-download-button mx-2" type="button">
-                                <FontAwesomeIcon icon={faGooglePlay}/>
-                                <span className='pl-1'>Download</span>
-                            </button>
-                        </div>
-                    </div>
-
+                    <DownloadButtons/>
                 </Container>
             </section>
 
@@ -184,28 +144,25 @@ class  Home extends React.Component{
                             >
 
                                 <Carousel.Item className='text-center center-block'>
-                                        <h2 className='testimonial-text'>Life in a metro can be fast and doesn't leave time for family. Thanks to Mr Laundry I'm spending time with my kids!</h2>
+                                    <h2 className='testimonial-text'><em>Life in a metro can be fast and doesn't leave time for family. Thanks to Wash My Clothes I'm spending time with my kids!</em></h2>
                                         <img className="testimonial-image" src={user1} alt="user 1"/>
                                         <em className='testimonial-name'>Justin, New York</em>
                                 </Carousel.Item>
                                 <Carousel.Item className='text-center center-block'>
-                                    <h2 className='testimonial-text'>University examinations? No problem cuz Mr Laundry's got us covered. Cheers!</h2>
+                                    <h2 className='testimonial-text'><em>University examinations? No problem cuz Wash My Clothes' got us covered. Cheers!</em></h2>
                                     <br/>
                                     <img className="testimonial-image" src={user2} alt="user 1"/>
                                     <em className='testimonial-name'>Miranda,Arvin and Jessie, London</em>
                                 </Carousel.Item>
                                 <Carousel.Item className='text-center center-block'>
-                                    <h2 className='testimonial-text'>As a professional coach, time management is key. I use Mr Laundry every week, every month. Their service always leaves a smile on my face.</h2>
+                                    <h2 className='testimonial-text'><em>As a professional coach, time management is key. I use Wash My Clothes every week, every month. Their service always leaves a smile on my face.</em></h2>
                                     <img className="testimonial-image" src={user3} alt="user 1"/>
                                     <em className='testimonial-name'> Dexter, Miami</em>
                                 </Carousel.Item>
                             </Carousel>
                         </Col>
-
-
                     </Row>
                 </Container>
-
             </section>
 
             <section id='about'>
@@ -239,7 +196,6 @@ class  Home extends React.Component{
                                        value={this.state.contact.name}
                                        onChange={(event)=>{ this.setState(Object.assign(this.state.contact, {name: event.target.value})) }} />
                             </div>
-
                             <div className="form-group">
                                 <input type="text" className="form-control" placeholder="Your Email *" style={{'borderRadius':'1rem'}}
                                        value={this.state.contact.email}
@@ -251,7 +207,6 @@ class  Home extends React.Component{
                                        onChange={(event)=>{ this.setState(Object.assign(this.state.contact, {phone: event.target.value}))}}
                                        />
                             </div>
-
                         </Col>
                         <Col md='5'>
                             <div className="form-group">
@@ -262,7 +217,6 @@ class  Home extends React.Component{
                             </div>
                             <button  className="btn btn-primary" style={{'borderRadius':'1rem'}}>Send Message</button>
                         </Col>
-
                         <Col md='3' className='text-center py-3'>
                                 <ul className="list-unstyled mb-0">
                                     <li>
@@ -274,14 +228,11 @@ class  Home extends React.Component{
                                         <FontAwesomeIcon className='contact-icon text-primary'  icon={faPhone}/>
                                         <p>+91 123 456 78 90</p>
                                     </li>
-
                                     <li>
                                         <FontAwesomeIcon className='contact-icon text-primary'  icon={faEnvelope}/>
                                         <p>contact@mrlaundry.com</p>
                                     </li>
                                 </ul>
-
-
                         </Col>
                     </Row>
                 </Container>

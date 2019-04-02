@@ -5,15 +5,17 @@ import Nav from "react-bootstrap/Nav";
 import {HashLink} from 'react-router-hash-link';
 import './NavBar.css';
 import Dropdown from "react-bootstrap/Dropdown";
+import logo from "./logo.png";
+// import user3 from "../Home/images/face3.jpg";
+// import Carousel from "../Home/Home";
 
 class NavBar extends React.Component {
 
     render() {
         return (
-
-            <Navbar variant='dark' expand="md" sticky="top" className="text-center navbar-root"
+            <Navbar variant='dark' expand="md" sticky="top" className="text-center NavBarRoot"
                     style={{'backgroundColor':this.global.titleBg}} >
-                <Navbar.Brand className="Laundry-Brand ml-3"><Link to={'/'}>Mr Laundry</Link> </Navbar.Brand>
+                <Navbar.Brand className=""><Link to={'/'}>    <img className='ml-3 img-fluid logo-img '  src={logo} alt="logo" /></Link> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-5">
@@ -22,26 +24,18 @@ class NavBar extends React.Component {
                             this.global.user.type!=='retail' &&
                             <HashLink to={'/#pricingLink'} className="nav-link">Pricing</HashLink>
                         }
-
-                        {!this.global.signedIn &&
-                        <Link to={'/signin'} className="nav-link ">Sign In</Link>
-                        }
-                        {
-                            !this.global.signedIn &&
-                            <Link to={'/register'} className="nav-link">Register</Link>
-                        }
-                        {
-                            this.global.signedIn &&
-                            <Link to={'/dashboard'} className="nav-link">Bookings</Link>
-                        }
-                        {
-                            this.global.signedIn &&
-                            <span className="nav-link signout" onClick={() => {this.props.signOut()}} >
+                        {!this.global.signedIn ?
+                            <>
+                                <Link to={'/signin'} className="nav-link ">Sign In</Link>
+                                <Link to={'/register'} className="nav-link">Register</Link>
+                            </>
+                            :
+                            <>
+                                <Link to={'/dashboard'} className="nav-link">Bookings</Link>
+                                <span className="nav-link signout" onClick={() => {this.props.signOut()}} >
                                 Sign Out
-                            </span>
-                        }
-                        { this.global.signedIn &&
-                            <Dropdown className='nav-link'>
+                                </span>
+                                <Dropdown className='nav-link'>
                                 <Dropdown.Toggle variant="info" id="dropdown-basic">
                                     <span>
                                         {this.global.user.name}
@@ -50,12 +44,12 @@ class NavBar extends React.Component {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Link to={'/dashboard'} className="text-dark btn">Bookings</Link>
-                                    <div className="text-dark btn" onClick={() => {this.props.signOut()}} >Sign Out</div>
+                                    <div className="text-dark btn " onClick={() => {this.props.signOut()}} >Sign Out</div>
 
                                 </Dropdown.Menu>
-                            </Dropdown>
+                                </Dropdown>
+                            </>
                         }
-
                         {
                             this.global.user.type!=='retail' &&
                             <form className="form-inline  mx-auto">
@@ -63,7 +57,6 @@ class NavBar extends React.Component {
                                     className="btn-text"> Book</span></Link>
                             </form>
                         }
-
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

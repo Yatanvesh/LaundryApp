@@ -1,9 +1,9 @@
-#greeting{
-    font-size: 5rem;
-    font-family: Righteous, sans-serif;
-}
+/*.Book #greeting{*/
+    /*font-size: 5rem;*/
+    /*font-family: Righteous, sans-serif;*/
+/*}*/
 
-.section-title{
+.Book .section-title{
     font-family: 'Anton', sans-serif;
     font-size: 3.5rem;
     color:var(--bright-red);

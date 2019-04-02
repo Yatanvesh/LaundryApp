@@ -7,7 +7,7 @@ import WebFont from 'webfontloader';
 
 WebFont.load({
     google: {
-        families: ['Pacifico','Oswald','Quicksand','Judson','Playfair Display','Chivo','Lora','Courgette','Anton','ZCOOL QingKe HuangYou','Righteous', 'IBM Plex Sans','BioRhyme'],
+        families: ['Pacifico','Oswald','Chivo','Lora','Anton','Righteous', 'Lobster','Bangers','Staatliches','Rubik:600'],
     }
 });
 
@@ -16,3 +16,4 @@ ReactDOM.render(
     , document.getElementById('root'));
 
 serviceWorker.unregister();
+//Knewave

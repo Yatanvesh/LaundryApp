@@ -16,4 +16,55 @@
     --blue-grey:#303841;
 }
 
+
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+}
+
+.cool-input {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.cool-input input {
+    height: auto;
+    border-radius: 2rem;
+}
+
+.cool-input>input,
+.cool-input>label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.cool-input>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: var(--blue-grey);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.cool-input input::placeholder {
+    color: transparent;
+}
+
+.cool-input input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.cool-input input:not(:placeholder-shown)~label {
+    padding-top: calc(var(--input-padding-y) / 3);
+    padding-bottom: calc(var(--input-padding-y) / 3);
+    font-size: 12px;
+    color: var(--blue-grey);
+}
+
 /*--bright-blue:#3490de;*/

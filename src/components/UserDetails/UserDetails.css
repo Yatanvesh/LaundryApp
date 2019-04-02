@@ -1,4 +1,4 @@
-.list-group-dark-custom .list-group-item{
+.UserDetails .list-group-item{
     background-color: var(--faded-blue);
     border: 1px solid #eeeeee;
     border-radius: 1rem !important;
@@ -8,21 +8,21 @@
     transition: ease-in 0.2s ;
 }
 
-.list-group-dark-custom .list-group-item:hover {
+.UserDetails .list-group-item:hover {
     background-color: #2C3447;
 }
 
 
-.user-properties{
+.UserDetails .user-properties{
     text-transform: uppercase;
     margin-left: 1rem;
     font-size:1.5rem;
 }
 
-.edit-icon{
+.UserDetails .edit-icon{
     transition: ease-in 0.2s ;
 }
-.edit-icon:hover{
+.UserDetails .edit-icon:hover{
     transform: scale(1.2);
     color:var(--bright-blue);
     cursor: pointer;

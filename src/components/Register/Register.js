@@ -1,5 +1,4 @@
-import React from 'react';
-import './Register.css';
+import React from 'reactn';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -16,19 +15,23 @@ class Register extends React.Component{
             password:'',
             phone:'',
             address:'',
+
         }
+
     }
     render() {
+        if(this.global.registerSuccess)
+            this.props.history.push('/signin');
         return (
-            <Container>
+            <Container className='SignIn'>
+                {/*To allow sharing of css styles b/w SignIn and Register components*/}
                 <Row>
                     <Col sm='9' md='7' lg='5' className="mx-auto">
                         <Card className="card-signin my-5">
-
                             <Card.Body>
                                 <Card.Title className="text-center boi">Register</Card.Title>
 
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="text" id="inputName" className="form-control"
                                            placeholder="Name" required autoFocus
                                            value={this.state.name}
@@ -37,7 +40,7 @@ class Register extends React.Component{
                                     <label htmlFor="inputName">Name</label>
                                 </div>
 
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="email" id="inputEmail" className="form-control"
                                            placeholder="Email address" required
                                            value={this.state.email}
@@ -46,7 +49,7 @@ class Register extends React.Component{
                                     <label htmlFor="inputEmail">Email address</label>
                                 </div>
 
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="password" id="inputPassword" className="form-control"
                                            placeholder="Password" required
                                            value={this.state.password}
@@ -54,7 +57,7 @@ class Register extends React.Component{
                                     />
                                     <label htmlFor="inputPassword">Password</label>
                                 </div>
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="text" id="inputPhone" className="form-control"
                                            placeholder="Phone" required
                                            value={this.state.phone}
@@ -63,7 +66,7 @@ class Register extends React.Component{
                                     <label htmlFor="inputPhone">Phone</label>
                                 </div>
 
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <textarea  id="inputAddress" className="form-control" required
                                                placeholder='Address'
                                            value={this.state.address}
@@ -73,7 +76,9 @@ class Register extends React.Component{
                                     <label htmlFor="inputAddress"></label>
                                 </div>
                                 <button className="btn btn-lg btn-primary btn-block btn-register "
-                                        onClick={()=> {this.props.onRegister(this.state)}}>Register
+                                        onClick={()=> {
+                                            this.props.onRegister(this.state);
+                                        }}>Register
                                 </button>
                                 <hr className="my-4"/>
                                 <button className="btn btn-lg  btn-block "

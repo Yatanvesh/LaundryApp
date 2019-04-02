@@ -3,7 +3,7 @@ class Retail extends React.Component {
     render(){
         return (
             <div>
-                hello Mr Laundy Retail
+                hello Wash My Clothes Retail
             </div>
         );
     }

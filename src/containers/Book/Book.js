@@ -63,6 +63,7 @@ class Book extends React.Component {
     }
 
     handleBooking = () => {
+        console.log('handlebooking called');
         let orderId= Math.floor( Math.random()*1000000);
         let order = {
             id:orderId,
@@ -73,8 +74,10 @@ class Book extends React.Component {
             city:this.state.city,
             startTime:this.state.timeRange.start,
             endTime:this.state.timeRange.end,
-            special:this.state.special
+            special:this.state.special,
+            status:'Requested'
         };
+        console.log('order', order);
 
         if(this.global.signedIn){
             let newOrders = this.global.user.orders;
@@ -105,9 +108,8 @@ class Book extends React.Component {
     render() {
         let {xs, sm, md} = this.state.col;
 
-
         return (
-            <section id='bookForm' className='mt-4 mb-5 mx-3'>
+            <section id='bookForm' className='Book mt-4 mb-5 mx-3'>
                 <Container>
                     <Row className='justify-content-center text-center'>
                         <Col>
@@ -127,7 +129,7 @@ class Book extends React.Component {
 
                         <Row className='justify-content-center'>
                             <Col xs={xs} sm={sm} md={md}>
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="text" id="inputName" className="form-control"
                                            placeholder="Name" required autoFocus
                                            value={this.state.name}
@@ -142,7 +144,7 @@ class Book extends React.Component {
                         </Row>
                         <Row className='justify-content-center'>
                             <Col xs={xs} sm={sm} md={md}>
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="email" id="inputEmail" className="form-control"
                                            placeholder="Email address" required
                                            style={{'borderRadius': '0.5rem'}}
@@ -157,7 +159,7 @@ class Book extends React.Component {
                         </Row>
                         <Row className='justify-content-center'>
                             <Col xs={xs} sm={sm} md={md}>
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <input type="text" id="inputPhone" className="form-control"
                                            placeholder="Phone" required
                                            value={this.state.phone}
@@ -172,7 +174,7 @@ class Book extends React.Component {
                         </Row>
                         <Row className='justify-content-center'>
                             <Col xs={xs} sm={sm} md={md}>
-                                <div className="form-label-group">
+                                <div className="cool-input">
                                     <textarea id="inputAddress" className="form-control" required
                                               placeholder='Address'
                                               value={this.state.address}
@@ -197,7 +199,7 @@ class Book extends React.Component {
 
                     <Row className='justify-content-center'>
                         <Col xs={xs} sm={sm} md={md}>
-                            <div className="form-label-group">
+                            <div className="cool-input">
                                 <Select
                                     className='service-selector'
                                     value={this.state.services}
@@ -213,7 +215,7 @@ class Book extends React.Component {
                     </Row>
                     <Row className='justify-content-center'>
                         <Col xs={xs} sm={sm} md={md}>
-                            <div className="form-label-group">
+                            <div className="cool-input">
                                 <Select
                                     className='service-selector'
                                     value={this.state.weight}
@@ -229,7 +231,7 @@ class Book extends React.Component {
                     </Row>
                     <Row className='justify-content-center'>
                         <Col xs={xs} sm={sm} md={md}>
-                            <div className="form-label-group">
+                            <div className="cool-input">
                                 <Select
                                     className='service-selector'
                                     value={this.state.city}
@@ -272,7 +274,7 @@ class Book extends React.Component {
                     </Row>
                     <Row className='justify-content-center'>
                         <Col xs={xs} sm={sm} md={md}>
-                            <div className="form-label-group mt-3">
+                            <div className="cool-input mt-3">
                                     <textarea className="form-control"
                                               placeholder='Special Instructions(optional)'
                                               value={this.state.special}
@@ -287,10 +289,11 @@ class Book extends React.Component {
                     </Row>
                     <Row className='justify-content-center'>
                         <Col xs={xs} sm={sm} md={md} className='text-center '>
-                            <button className="btn btn-danger btn-block btn-xl text-light px-3 "> <span
-                                className="btn-text"
-                                onClick={() => this.handleBooking()}
-                            >BOOK NOW</span></button>
+                            <button className="btn btn-danger btn-block btn-xl text-light px-3 "
+                                    onClick={() => this.handleBooking()}
+                            >
+                                <span className="btn-text">BOOK NOW</span>
+                            </button>
                         </Col>
                     </Row>
 

@@ -11,7 +11,7 @@ const Footer = () =>  {
         <div className="container">
             <div className="row">
                 <div className="col-sm-3">
-                    <h1 className="Laundry-Brand ml-3 mt-4"><HashLink to={'/#titleLink'} className='text-primary'>Mr Laundry</HashLink> </h1>
+                    <h1 className="Laundry-Brand ml-3 mt-4"><HashLink to={'/#titleLink'} className='text-primary'>Wash my clothes</HashLink> </h1>
                 </div>
                 <div className="col-sm-2">
                     <h5>Get started</h5>

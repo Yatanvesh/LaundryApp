@@ -9,7 +9,9 @@ import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import Book from './containers/Book/Book';
 import DashBoard from './containers/DashBoard/DashBoard';
+import Status from './components/OrderCard/Status/Status';
 import './App.css';
+import Redirect from "react-router/es/Redirect";
 
 const dummyUser={
     name:"Abhinav",
@@ -62,6 +64,7 @@ setGlobal({
         gis:'',
     },
     history:null,
+    registerSuccess:false,
     titleBg:'#303841',
     blueGrey:'#303841',
     fadedBlue:'#384259',
@@ -71,34 +74,46 @@ setGlobal({
 class App extends Component {
 
     onSignIn = (data,history)=>{
-        if( data.email.toLowerCase() === dummyUser.email.toLowerCase() && data.password === dummyUser.password ){
-            this.setGlobal(Object.assign(this.global.user, {
-                name: dummyUser.name,
-                type:dummyUser.type,
-                phone:dummyUser.phone,
-                address:dummyUser.address,
-                email:dummyUser.email
-            }));
-            this.setGlobal({signedIn:true});
-            this.setGlobal({titleBg:this.global.fadedBlue});
-            history.push("/dashboard");
-            this.setGlobal({history:history});
-        } else if( data.email.toLowerCase() === dummyRetailer.email.toLowerCase() && data.password === dummyRetailer.password ) {
-            this.setGlobal(Object.assign(this.global.user, {
-                name: dummyRetailer.name,
-                type:dummyRetailer.type,
-                phone:dummyRetailer.phone,
-                address:dummyRetailer.address,
-                email:dummyRetailer.email
-            }));
-            this.setGlobal({signedIn:true});
-            this.setGlobal({titleBg:this.global.lightGrey});
-            history.push("/dashboard");
-            this.setGlobal({history:history});
-        }
+        fetch("http://localhost:3005/signin", {
+            method:'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then( result => {
+                console.log(result);
+                if(result.email){
+                    this.setGlobal(Object.assign(this.global.user, {
+                        name: result.name,
+                        type:'customer',
+                        phone:result.phone,
+                        address:result.address,
+                        email:result.email
+                    }));
+                    this.setGlobal({signedIn:true});
+                    this.setGlobal({titleBg:this.global.fadedBlue});
+                    history.push("/dashboard");
+                    this.setGlobal({history:history});
+                    return true;
+                }
+            })
+            .catch(err => console.log('err', err));
 
+        // if( data.email.toLowerCase() === dummyRetailer.email.toLowerCase() && data.password === dummyRetailer.password ) {
+        //     this.setGlobal(Object.assign(this.global.user, {
+        //         name: dummyRetailer.name,
+        //         type:dummyRetailer.type,
+        //         phone:dummyRetailer.phone,
+        //         address:dummyRetailer.address,
+        //         email:dummyRetailer.email
+        //     }));
+        //     this.setGlobal({signedIn:true});
+        //     this.setGlobal({titleBg:this.global.lightGrey});
+        //     history.push("/dashboard");
+        //     this.setGlobal({history:history});
+        // }
 
-        else return false;
+       return false;
     };
 
     signOut = ()=>{
@@ -108,13 +123,27 @@ class App extends Component {
         this.setGlobal(Object.assign(this.global.user, initialUserState));
     }
 
-    onRegister(data){
+    onRegister = (userRequest) =>{
+        fetch("http://localhost:3005/register", {
+            method:'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(userRequest)
+        })
+            .then(response => response.json())
+            .then( result => {
+                if(result.email){
+                    this.setGlobal({registerSuccess: true})
 
-    }
+                }
+
+            })
+            .catch(err => console.log('err', err));
+
+    };
 
   render() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL }>
             <div className='app-container'>
                 <NavBar signOut={this.signOut}/>
                 <Switch>
@@ -128,13 +157,13 @@ class App extends Component {
                            render= {(props) => <Book {...props}  />}
                     />
                     <Route path='/dashboard' component={DashBoard} />
+                    <Route path='/ts' component={Status}/>
                     <Route component={Error404}/>
                 </Switch>
-
-
-
                 <Footer/>
+
             </div>
+
         </BrowserRouter>
     );
   }
