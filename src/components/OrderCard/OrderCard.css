@@ -1,28 +1,28 @@
-.order-card{
+.Order .order-card{
     background: var(--faded-blue);
     transition: ease-in 0.3s;
 }
 
-.order-card:hover{
+.Order .order-card:hover{
     background: #264e70;
 }
 
-.id{
+.Order .id{
     text-align: center;
     color:var(--light-blue);
     font-size: 1.5rem;
 }
-.field-name{
+.Order .field-name{
     font-size: 1.2rem;
     white-space:nowrap;
 }
 
-.field-value{
+.Order .field-value{
     font-size: 1.2rem;
     white-space:nowrap;
     color:#3ec1d3;
 }
-.field-separator{
+.Order .field-separator{
     border: none;
     height: 2px;
     padding:0;

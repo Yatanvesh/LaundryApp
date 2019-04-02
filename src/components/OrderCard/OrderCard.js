@@ -5,13 +5,11 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-const Order = ({order, type}) => {
+const OrderCard = ({order, type}) => {
     return (
-        <Card className='text-centered'>
+        <Card className='text-centered Order'>
             <Card.Body className='order-card text-centered'>
-
                 <div className='id text-centered'>Order #{order.id}</div>
-
                 <Container className='mt-3'>
                     <Row>
                         <Col className='w100'>
@@ -45,7 +43,6 @@ const Order = ({order, type}) => {
                             <div className='field-value'>{order.startTime} - {order.endTime}</div>
                         </Col>
                     </Row>
-
                     {
                         order.special ?
                             <span><hr className='field-separator'/>
@@ -67,7 +64,6 @@ const Order = ({order, type}) => {
                                 type === 'customer' &&
                                 <button className="btn btn-primary mr-2">Modify</button>
                             }
-
                             <button className="btn btn-danger ml-2">Cancel</button>
                         </Col>
 
@@ -79,4 +75,4 @@ const Order = ({order, type}) => {
     );
 };
 
-export default Order;
+export default OrderCard;
