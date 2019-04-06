@@ -1,17 +1,18 @@
 {
-  "main.css": "/laundry/static/css/main.0d64c247.chunk.css",
-  "main.js": "/laundry/static/js/main.b865c915.chunk.js",
-  "main.js.map": "/laundry/static/js/main.b865c915.chunk.js.map",
+  "main.css": "/laundry/static/css/main.1ca9af32.chunk.css",
+  "main.js": "/laundry/static/js/main.d4032a11.chunk.js",
+  "main.js.map": "/laundry/static/js/main.d4032a11.chunk.js.map",
   "runtime~main.js": "/laundry/static/js/runtime~main.75e061e3.js",
   "runtime~main.js.map": "/laundry/static/js/runtime~main.75e061e3.js.map",
   "static/css/2.257a6eec.chunk.css": "/laundry/static/css/2.257a6eec.chunk.css",
-  "static/js/2.9a51769a.chunk.js": "/laundry/static/js/2.9a51769a.chunk.js",
-  "static/js/2.9a51769a.chunk.js.map": "/laundry/static/js/2.9a51769a.chunk.js.map",
+  "static/js/2.33e5c549.chunk.js": "/laundry/static/js/2.33e5c549.chunk.js",
+  "static/js/2.33e5c549.chunk.js.map": "/laundry/static/js/2.33e5c549.chunk.js.map",
   "index.html": "/laundry/index.html",
-  "precache-manifest.9b23c0e0e3cf85d800a149772a645095.js": "/laundry/precache-manifest.9b23c0e0e3cf85d800a149772a645095.js",
+  "precache-manifest.ae9af113eb6b7a98240a7294c995c938.js": "/laundry/precache-manifest.ae9af113eb6b7a98240a7294c995c938.js",
   "service-worker.js": "/laundry/service-worker.js",
   "static/css/2.257a6eec.chunk.css.map": "/laundry/static/css/2.257a6eec.chunk.css.map",
-  "static/css/main.0d64c247.chunk.css.map": "/laundry/static/css/main.0d64c247.chunk.css.map",
+  "static/css/main.1ca9af32.chunk.css.map": "/laundry/static/css/main.1ca9af32.chunk.css.map",
   "static/media/face3.jpg": "/laundry/static/media/face3.7bb02a30.jpg",
-  "static/media/funy2.jpeg": "/laundry/static/media/funy2.50642731.jpeg"
+  "static/media/funy2.jpeg": "/laundry/static/media/funy2.50642731.jpeg",
+  "static/media/logo.png": "/laundry/static/media/logo.44a3f824.png"
 }

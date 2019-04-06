@@ -1,23 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "b865c915fc4dc46f3232",
-    "url": "/laundry/static/css/main.0d64c247.chunk.css"
+    "revision": "d4032a11720285383313",
+    "url": "/laundry/static/css/main.1ca9af32.chunk.css"
   },
   {
-    "revision": "b865c915fc4dc46f3232",
-    "url": "/laundry/static/js/main.b865c915.chunk.js"
+    "revision": "d4032a11720285383313",
+    "url": "/laundry/static/js/main.d4032a11.chunk.js"
   },
   {
     "revision": "75e061e3ae65335acb18",
     "url": "/laundry/static/js/runtime~main.75e061e3.js"
   },
   {
-    "revision": "9a51769a6110e4622da8",
+    "revision": "33e5c549f8dda6dbcd0e",
     "url": "/laundry/static/css/2.257a6eec.chunk.css"
   },
   {
-    "revision": "9a51769a6110e4622da8",
-    "url": "/laundry/static/js/2.9a51769a.chunk.js"
+    "revision": "33e5c549f8dda6dbcd0e",
+    "url": "/laundry/static/js/2.33e5c549.chunk.js"
+  },
+  {
+    "revision": "44a3f824cb554f523c6890440d94c114",
+    "url": "/laundry/static/media/logo.44a3f824.png"
   },
   {
     "revision": "5064273120cce3b5da912c019448ae98",
@@ -28,7 +32,7 @@ self.__precacheManifest = [
     "url": "/laundry/static/media/face3.7bb02a30.jpg"
   },
   {
-    "revision": "ce07a5a12953842072f015742eac70d0",
+    "revision": "bfbe6bf02739cdc08b0baf021a158b4a",
     "url": "/laundry/index.html"
   }
 ];
