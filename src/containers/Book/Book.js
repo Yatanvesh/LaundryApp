@@ -78,31 +78,29 @@ class Book extends React.Component {
             status:'Requested'
         };
         console.log('order', order);
-
         if(this.global.signedIn){
-            let newOrders = this.global.user.orders;
-            newOrders.push(order);
-            this.setGlobal(Object.assign(this.global.user, {orders:newOrders}));
+
+            fetch("http://localhost:3005/createOrder", {
+                method:'post',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({order: order, email:this.global.user.email})
+            })
+                .then(response => response.json())
+                .then( result => {
+                    if(result.action === 'success'){
+                        this.props.history.push('./dashboard');
+                    } else {
+                        //handleError
+                    }
+
+                })
+                .catch(err => console.log('err', err));
         }
 
-        if(!this.global.signedIn){
-            if(!this.global.guest.name){
-                let guestUser={
-                    name:this.state.name,
-                    email:this.state.email,
-                    phone:this.state.phone,
-                    address:this.state.address,
-                    orders:[order]
-                };
-                this.setGlobal({guest: guestUser});
-            } else {
-                let newOrders = this.global.guest.orders;
-                newOrders.push(order);
-                this.setGlobal(Object.assign(this.global.guest, {orders:newOrders}));
-            }
-        }
-        if(true)//insertion success
-            this.props.history.push('./dashboard');
+
+
+
+
     };
 
     render() {

@@ -24,6 +24,50 @@ class DashBoard extends React.Component {
 
     }
 
+    componentWillMount() {
+        if(this.global.signedIn){
+            let OrdersFinal = [];
+
+            fetch("http://localhost:3005/getOrders", {
+                method:'post',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({email:this.global.user.email})
+            })
+                .then(response => response.json())
+                .then( orders => {
+                    orders.orders.map(order =>{
+                        let finalOrder = JSON.parse(order.orderjson);
+                        console.log(finalOrder);
+                        OrdersFinal.push(finalOrder);
+                    })
+                    this.setGlobal(Object.assign(this.global.user, {orders:OrdersFinal}));
+                    this.setState({
+                        orders:OrdersFinal
+                    })
+                })
+                .catch(err => console.log('err', err));
+        }
+
+
+        // if(!this.global.signedIn){
+        //     if(!this.global.guest.name){
+        //         let guestUser={
+        //             name:this.state.name,
+        //             email:this.state.email,
+        //             phone:this.state.phone,
+        //             address:this.state.address,
+        //             orders:[order]
+        //         };
+        //         this.setGlobal({guest: guestUser});
+        //     } else {
+        //         let newOrders = this.global.guest.orders;
+        //         newOrders.push(order);
+        //         this.setGlobal(Object.assign(this.global.guest, {orders:newOrders}));
+        //     }
+        // }
+
+    }
+
     getGreeting = () => {
         let name = this.global.user.name || this.global.guest.name || 'Guest';
         switch (Math.floor(Math.random() * 3)) {
@@ -52,7 +96,7 @@ class DashBoard extends React.Component {
                                     {
                                         this.state.orders.map(
                                             (order) => (
-                                                <Col xs='12' md='6' key={order.id}>
+                                                <Col xs='12' md='6' className='my-2' key={order.id}>
                                                     <OrderCard order={order} type={this.global.user.type}/>
                                                 </Col>
                                             )

@@ -66,20 +66,20 @@ const OrderCard = ({order, type}) => {
                             <div className='field-name'>Status:</div>
                         </Col>
                         <Col>
-                            <div className='field-value'>{'Being Washed'}</div>
+                            <div className='field-value'>{'Booked'}</div>
                         </Col>
                     </Row>
                     <Status/>
 
-                    <Row className='justify-content-center my-2'>
-                        <Col>
-                            {
-                                type === 'customer' &&
-                                <button className="btn btn-primary mr-2">Modify</button>
-                            }
-                            <button className="btn btn-danger ml-2">Cancel</button>
-                        </Col>
-                    </Row>
+                    {/*<Row className='justify-content-center my-2'>*/}
+                        {/*<Col>*/}
+                            {/*{*/}
+                                {/*type === 'customer' &&*/}
+                                {/*<button className="btn btn-primary mr-2">Modify</button>*/}
+                            {/*}*/}
+                            {/*<button className="btn btn-danger ml-2">Cancel</button>*/}
+                        {/*</Col>*/}
+                    {/*</Row>*/}
                 </Container>
             </Card.Body>
         </Card>
