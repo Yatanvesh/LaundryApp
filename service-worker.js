@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/LaundryApp/precache-manifest.45364b1912e4d110f3688e917c338dd1.js"
+  "/LaundryApp/precache-manifest.c7682447c78bb858053c1a7b37d578ac.js"
 );
 
 workbox.clientsClaim();

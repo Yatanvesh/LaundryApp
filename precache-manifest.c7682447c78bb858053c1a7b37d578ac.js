@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "6f1c6144e4b1ec5e6aa8",
+    "revision": "ccc54f75ae26df86d10b",
     "url": "/LaundryApp/static/css/main.1ca9af32.chunk.css"
   },
   {
-    "revision": "6f1c6144e4b1ec5e6aa8",
-    "url": "/LaundryApp/static/js/main.6f1c6144.chunk.js"
+    "revision": "ccc54f75ae26df86d10b",
+    "url": "/LaundryApp/static/js/main.ccc54f75.chunk.js"
   },
   {
     "revision": "03cd2b2e37f75103c1ad",
     "url": "/LaundryApp/static/js/runtime~main.03cd2b2e.js"
   },
   {
-    "revision": "33e5c549f8dda6dbcd0e",
+    "revision": "4e048bdd3d07e6a2db52",
     "url": "/LaundryApp/static/css/2.257a6eec.chunk.css"
   },
   {
-    "revision": "33e5c549f8dda6dbcd0e",
-    "url": "/LaundryApp/static/js/2.33e5c549.chunk.js"
+    "revision": "4e048bdd3d07e6a2db52",
+    "url": "/LaundryApp/static/js/2.4e048bdd.chunk.js"
   },
   {
     "revision": "44a3f824cb554f523c6890440d94c114",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/LaundryApp/static/media/face3.7bb02a30.jpg"
   },
   {
-    "revision": "80480ed950bd01ad13cbbab4a4e2e230",
+    "revision": "f820653810adb024458c9f520653514f",
     "url": "/LaundryApp/index.html"
   }
 ];
