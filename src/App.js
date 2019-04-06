@@ -3,7 +3,6 @@ import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Error404 from './components/Error404/Error404';
-import User from './containers/User';
 import Home from './components/Home/Home';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
@@ -11,7 +10,7 @@ import Book from './containers/Book/Book';
 import DashBoard from './containers/DashBoard/DashBoard';
 import Status from './components/OrderCard/Status/Status';
 import './App.css';
-import Redirect from "react-router/es/Redirect";
+
 
 const dummyUser={
     name:"Abhinav",
@@ -150,9 +149,7 @@ class App extends Component {
                     <Route path='/' component={Home} exact />
                     <Route path='/signin' render={ (props) => <SignIn {...props} onSignIn={this.onSignIn} />} />
                     <Route path='/register' render={ (props) => <Register {...props} onRegister={this.onRegister} />}  />
-                    <Route path='/user'
-                           render= {(props) => <User {...props} userName={'TestUser'} />}
-                    />
+
                     <Route path='/book'
                            render= {(props) => <Book {...props}  />}
                     />
