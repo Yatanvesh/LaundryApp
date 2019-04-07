@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ccc54f75ae26df86d10b",
+    "revision": "17e48f4be232b5ffc7bc",
     "url": "/LaundryApp/static/css/main.1ca9af32.chunk.css"
   },
   {
-    "revision": "ccc54f75ae26df86d10b",
-    "url": "/LaundryApp/static/js/main.ccc54f75.chunk.js"
+    "revision": "17e48f4be232b5ffc7bc",
+    "url": "/LaundryApp/static/js/main.17e48f4b.chunk.js"
   },
   {
     "revision": "03cd2b2e37f75103c1ad",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/LaundryApp/static/media/face3.7bb02a30.jpg"
   },
   {
-    "revision": "f820653810adb024458c9f520653514f",
+    "revision": "58d6d0ca40876ff3b849bf1a83bac10e",
     "url": "/LaundryApp/index.html"
   }
 ];
